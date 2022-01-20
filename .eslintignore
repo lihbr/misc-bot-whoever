@@ -1,7 +1,7 @@
 # .gitignore copy
 
 # custom
-dist
+.netlify
 
 # os
 .DS_Store
