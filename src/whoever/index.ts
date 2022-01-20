@@ -24,6 +24,14 @@ const handler: Handler = async (event, _context) => {
 		return { statusCode: 401 };
 	}
 
+	// Don't answer to Slack retry attempts
+	if (
+		event.headers["x-slack-retry-num"] &&
+		parseInt(event.headers["x-slack-retry-num"]) > 0
+	) {
+		return { statusCode: 200 };
+	}
+
 	// Extract body
 	const body = slack.parseBody(event);
 
@@ -40,7 +48,7 @@ const handler: Handler = async (event, _context) => {
 
 	console.log(body);
 
-	if (body.event.type === "app_mention") {
+	if (body.event.type === "app_mention" && !body.event.edited) {
 		// Get conversations members
 		let members: string[] = [];
 		if (body.event.thread_ts) {
