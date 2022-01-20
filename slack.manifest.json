@@ -33,7 +33,7 @@
 	},
 	"settings": {
 		"event_subscriptions": {
-			"request_url": "http://90.110.243.66:3003/api/v1/whoever",
+			"request_url": "https://example.com/api/v1/whoever",
 			"bot_events": ["app_mention"]
 		},
 		"org_deploy_enabled": false,
