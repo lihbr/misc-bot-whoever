@@ -58,7 +58,9 @@ const handler: Handler = async (event, _context) => {
 					ts: body.event.thread_ts,
 					limit: 1000,
 				})) as { messages: { user: string }[] }
-			).messages.map((m) => m.user);
+			).messages
+				.map((m) => m.user)
+				.filter((u, index, arr) => arr.indexOf(u) === index);
 		} else {
 			members = (
 				(await slack.get("/conversations.members", {
