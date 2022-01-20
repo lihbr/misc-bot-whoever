@@ -5,9 +5,9 @@
 	# Build command
 	command = "npm run build"
 	# Build directory
-	publish = "dist/"
+	publish = "public/"
 	# Serverless Lambda functions
-	functions = "functions/"
+	functions = "src/"
 
 # Enforce yarn
 [build.environment]
@@ -29,10 +29,7 @@
 
 # Netlify dev config
 [dev]
-	framework = "#custom"
-	command = "npm run dev"
-	port = 8888
-	targetPort = 3000
+	port = 3003
 	autoLaunch = false
 
 # Deploy from production branch

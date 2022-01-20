@@ -5,10 +5,14 @@ module.exports = {
 		node: true,
 	},
 	parserOptions: {
+		parser: "@typescript-eslint/parser",
 		ecmaVersion: 2020,
-		sourceType: "module",
 	},
-	extends: ["plugin:prettier/recommended"],
+	extends: [
+		"plugin:@typescript-eslint/eslint-recommended",
+		"plugin:@typescript-eslint/recommended",
+		"plugin:prettier/recommended",
+	],
 	plugins: [],
 	rules: {
 		"no-console": ["warn", { allow: ["info", "warn", "error"] }],

@@ -1,21 +1,21 @@
 {
-	"name": "package_name",
+	"name": "misc-slack-whoever",
 	"version": "0.0.0",
-	"description": "package_description",
+	"description": "When you need whoever to get the job done",
 	"private": true,
 	"keywords": [
 		"lihbr"
 	],
 	"repository": {
 		"type": "git",
-		"url": "ssh://git@github.com/github_org_slash_github_repo.git"
+		"url": "ssh://git@github.com/lihbr/misc-slack-whoever.git"
 	},
 	"license": "MIT",
 	"author": "Lucie Haberer <hello@lihbr.com> (https://lihbr.com)",
 	"type": "module",
 	"scripts": {
 		"dev": "echo \"Error: no dev command specified\" && exit 1",
-		"build": "echo \"Error: no build command specified\" && exit 1",
+		"build": "tsc --noEmit",
 		"prepare": "husky install",
 		"release": "npm run build && npm run test && standard-version && git push --follow-tags && npm run build && npm publish",
 		"release:dry": "standard-version --dry-run",
@@ -26,19 +26,28 @@
 		"test": "npm run lint && npm run unit"
 	},
 	"engines": {
-		"node": ">=12.0.0"
+		"node": ">=14.0.0"
 	},
-	"dependencies": {},
+	"dependencies": {
+		"@netlify/functions": "0.10.0",
+		"node-fetch": "3.1.1",
+		"qs": "6.10.3"
+	},
 	"devDependencies": {
-		"@commitlint/cli": "13.1.0",
-		"@commitlint/config-conventional": "13.1.0",
-		"ava": "3.15.0",
-		"eslint": "7.32.0",
+		"@commitlint/cli": "16.1.0",
+		"@commitlint/config-conventional": "16.0.0",
+		"@types/qs": "6.9.7",
+		"@typescript-eslint/eslint-plugin": "^5.8.1",
+		"@typescript-eslint/parser": "^5.8.1",
+		"ava": "4.0.1",
+		"eslint": "8.7.0",
 		"eslint-config-prettier": "8.3.0",
-		"eslint-plugin-prettier": "3.4.1",
-		"husky": "7.0.1",
+		"eslint-plugin-prettier": "4.0.0",
+		"husky": "7.0.4",
 		"nyc": "15.1.0",
-		"prettier": "2.3.2",
-		"standard-version": "^9.3.1"
+		"prettier": "2.5.1",
+		"standard-version": "9.3.2",
+		"ts-eager": "^2.0.2",
+		"typescript": "4.5.5"
 	}
 }
