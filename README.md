@@ -7,7 +7,7 @@ TODO: Replace all on all files:
 
 -->
 
-# misc-slack-whoever
+# misc-bot-whoever
 
 [![Github Actions CI][github-actions-ci-src]][github-actions-ci-href]
 [![Codecov][codecov-src]][codecov-href]
